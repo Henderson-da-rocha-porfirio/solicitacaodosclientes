@@ -1,7 +1,7 @@
-package com.invext.solicitacoesclientes.controlador;
+package com.invext.solicitacoesdosclientes.controlador;
 
-import com.invext.solicitacoesclientes.dto.SolicitacaoDTO;
-import com.invext.solicitacoesclientes.servico.ServicoSolicitacao;
+import com.invext.solicitacoesdosclientes.dto.SolicitacaoDTO;
+import com.invext.solicitacoesdosclientes.servico.ServicoSolicitacao;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
