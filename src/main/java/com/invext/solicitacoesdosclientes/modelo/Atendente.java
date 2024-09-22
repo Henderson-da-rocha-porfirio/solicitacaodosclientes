@@ -9,9 +9,22 @@ public class Atendente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String nome;
-    private Time time;
+    private String time;
     private int capacidadeMaxima;
     private int capacidadeAtual;
+
+    public Atendente() {
+    }
+
+    public Atendente(String id, String nome, String time, int capacidadeMaxima, int capacidadeAtual) {
+        this.id = id;
+        this.nome = nome;
+        this.time = time;
+        this.capacidadeMaxima = capacidadeMaxima;
+        this.capacidadeAtual = capacidadeAtual;
+    }
+
+    // Getters e Setters
 
     public String getId() {
         return id;
@@ -29,11 +42,11 @@ public class Atendente {
         this.nome = nome;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
@@ -51,5 +64,30 @@ public class Atendente {
 
     public void setCapacidadeAtual(int capacidadeAtual) {
         this.capacidadeAtual = capacidadeAtual;
+    }
+
+    // toString, equals e hashCode
+
+    @Override
+    public String toString() {
+        return "Atendente{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", time='" + time + '\'' +
+                ", capacidadeMaxima=" + capacidadeMaxima +
+                ", capacidadeAtual=" + capacidadeAtual +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Atendente atendente = (Atendente) o;
+        return id.equals(atendente.id);
+    }
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }
